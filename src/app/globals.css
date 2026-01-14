@@ -45,3 +45,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer base {
+  button, input, select, textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    /* Memastikan warna background muncul di iOS */
+    background-clip: padding-box; 
+  }
+}
+
+/* Memperbaiki masalah rendering warna gradient di Safari */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
