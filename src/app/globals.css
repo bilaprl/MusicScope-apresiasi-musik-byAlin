@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose-pink: #f472b6;
+  --color-rose-light: #fce7f3;
+  --color-pastel-blue: #a5f3fc;
+  --color-soft-blue: #0ea5e9;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* FIX UNTUK IPHONE: Menangani masalah tinggi layar (100vh) */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-h: -webkit-fill-available;
+  }
+}
+
+/* FIX UNTUK BACKDROP BLUR & GRADIENT TEXT (SAFARI) */
+.backdrop-blur-xl {
+  -webkit-backdrop-filter: blur(24px); /* Wajib untuk Safari */
+  backdrop-filter: blur(24px);
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text; /* Wajib untuk Safari */
+  background-clip: text;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Memastikan teks tetap tajam di mobile */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
